@@ -1,5 +1,5 @@
 #include "util.h"
-
+using namespace boring::base;
 bool CUtil::isBigEndian()
 {
     const uint16 p = 0x0001;

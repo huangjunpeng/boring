@@ -3,7 +3,8 @@ using namespace std;
 
 #include <Address.h>
 #include <inifile.h>
-
+using namespace boring::base;
+using namespace boring::net;
 int main(int argc, char **argv)
 {
 

@@ -2,6 +2,7 @@
 #define INIFILE_H
 #include <boring.h>
 class Config;
+NAMESPACE_BEGIN
 typedef SharedPtr<Config> ShardConfig;
 #define BUFF_LEN 1024
 class CIniFile
@@ -30,5 +31,5 @@ private:
     std::string m_strFileName;
     std::map<std::string, ShardConfig> m_mSection;
 };
-
+NAMESPACE_END
 #endif // INIFILE_H

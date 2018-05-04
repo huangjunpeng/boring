@@ -1,7 +1,7 @@
 #include "inifile.h"
 #include "string.h"
 #include "stringutil.h"
-
+using namespace boring::base;
 class Config
 {
 public:

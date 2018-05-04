@@ -2,6 +2,7 @@
 #include <string.h>
 #include <algorithm>
 #include <stdarg.h>
+using namespace boring::base;
 std::string StringUtil::trim(std::string &str, const std::string drop)
 {
     str.erase(str.find_last_not_of(drop) + 1);

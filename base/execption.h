@@ -2,6 +2,7 @@
 #define EXECPTION_H
 #include <boring.h>
 using namespace std;
+NAMESPACE_BEGIN
 class CException : public exception
 {
 public:
@@ -25,5 +26,5 @@ public:
 private:
     char *errmsg;
 };
-
+NAMESPACE_END
 #endif // EXECPTION_H

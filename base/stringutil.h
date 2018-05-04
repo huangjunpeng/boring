@@ -1,6 +1,7 @@
 #ifndef STRINGUTIL_H
 #define STRINGUTIL_H
 #include <boring.h>
+NAMESPACE_BEGIN
 class StringUtil
 {
 public:
@@ -26,6 +27,6 @@ public:
     static std::string stolower(std::string& str);
     static std::string stoupper(std::string& str);
 };
-
+NAMESPACE_END
 
 #endif // STRINGUTIL_H

@@ -8,6 +8,7 @@
 #endif
 
 class CAddr;
+NAMESPACE_NET_BEGIN
 typedef SharedPtr<CAddr> ShardCAddr;
 class CAddress
 {
@@ -29,5 +30,5 @@ public:
 private:
 	ShardCAddr m_SharedPtrAddr;
 };
-
+NAMESPACE_NET_END
 #endif //__ADDRESS_H_

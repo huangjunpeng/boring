@@ -1,5 +1,5 @@
 #include "Address.h"
-
+using namespace boring::net;
 class CAddr
 {
 public:
@@ -118,7 +118,7 @@ std::string CAddress::toHost(const char *addr)
 	return addr;
 }
 
-std::ostream& operator<<(std::ostream& os, const CAddress& addr)
+std::ostream& boring::net::operator<<(std::ostream& os, const CAddress& addr)
 {
 	os << addr.totIp() << ":" << addr.toPort();
 	return os;
