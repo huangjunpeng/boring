@@ -1,0 +1,18 @@
+# Object files
+*.log
+~*.docx
+*.png
+*.bat
+*.ncb
+*.exe
+*.dll
+*.lib
+*.obj
+*.dep
+*.idb
+*.pdb
+
+# Build results
+/Debug/
+/boring/Debug/
+/boring/boring.vcproj.MXSOFT-ALEX.Administrator.user
