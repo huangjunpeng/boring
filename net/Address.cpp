@@ -7,8 +7,13 @@ public:
 public:
 	CAddr(struct sockaddr_in addr) : m_addr(addr)
 	{
+		dump();
 	}
 	~CAddr()
+	{
+		dump();
+	}
+	void dump()
 	{
 		std::cout << "~CAddr " << toString().c_str() << std::endl;
 	}

@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boring", "boring\boring.vcproj", "{273A8895-FA0A-45A1-8A53-6C1947A7960E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UdpServer", "UdpServer\UdpServer.vcproj", "{1D91DAE4-7D02-423F-A898-B6A93A37F575}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UdpClient", "UdpClient\UdpClient.vcproj", "{485CE868-22D2-4B77-8248-F3249135A04B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +17,14 @@ Global
 		{273A8895-FA0A-45A1-8A53-6C1947A7960E}.Debug|Win32.Build.0 = Debug|Win32
 		{273A8895-FA0A-45A1-8A53-6C1947A7960E}.Release|Win32.ActiveCfg = Release|Win32
 		{273A8895-FA0A-45A1-8A53-6C1947A7960E}.Release|Win32.Build.0 = Release|Win32
+		{1D91DAE4-7D02-423F-A898-B6A93A37F575}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1D91DAE4-7D02-423F-A898-B6A93A37F575}.Debug|Win32.Build.0 = Debug|Win32
+		{1D91DAE4-7D02-423F-A898-B6A93A37F575}.Release|Win32.ActiveCfg = Release|Win32
+		{1D91DAE4-7D02-423F-A898-B6A93A37F575}.Release|Win32.Build.0 = Release|Win32
+		{485CE868-22D2-4B77-8248-F3249135A04B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{485CE868-22D2-4B77-8248-F3249135A04B}.Debug|Win32.Build.0 = Debug|Win32
+		{485CE868-22D2-4B77-8248-F3249135A04B}.Release|Win32.ActiveCfg = Release|Win32
+		{485CE868-22D2-4B77-8248-F3249135A04B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

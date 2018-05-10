@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="boring"
-	ProjectGUID="{273A8895-FA0A-45A1-8A53-6C1947A7960E}"
-	RootNamespace="boring"
+	Name="UdpClient"
+	ProjectGUID="{485CE868-22D2-4B77-8248-F3249135A04B}"
+	RootNamespace="UdpClient"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -41,7 +41,6 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../base;../net"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -187,74 +186,6 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
-		</Filter>
-		<Filter
-			Name="base"
-			>
-			<File
-				RelativePath="..\base\boring.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\execption.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\inifile.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\inifile.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\InStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\InStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\OutStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\OutStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\stringutil.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\stringutil.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\util.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\util.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="net"
-			>
-			<File
-				RelativePath="..\net\Address.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\net\Address.h"
-				>
-			</File>
-			<File
-				RelativePath="..\net\ProtocolHeader.h"
-				>
-			</File>
 		</Filter>
 	</Files>
 	<Globals>

@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="boring"
-	ProjectGUID="{273A8895-FA0A-45A1-8A53-6C1947A7960E}"
-	RootNamespace="boring"
+	Name="UdpServer"
+	ProjectGUID="{1D91DAE4-7D02-423F-A898-B6A93A37F575}"
+	RootNamespace="UdpServer"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -172,7 +172,35 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\net\Address.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\base\inifile.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\base\InStream.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\main.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\base\OutStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\base\stringutil.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\UdpServer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\base\util.cpp"
 				>
 			</File>
 		</Filter>
@@ -181,80 +209,16 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\UdpServer.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="资源文件"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
-		</Filter>
-		<Filter
-			Name="base"
-			>
-			<File
-				RelativePath="..\base\boring.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\execption.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\inifile.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\inifile.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\InStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\InStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\OutStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\OutStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\stringutil.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\stringutil.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\util.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\util.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="net"
-			>
-			<File
-				RelativePath="..\net\Address.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\net\Address.h"
-				>
-			</File>
-			<File
-				RelativePath="..\net\ProtocolHeader.h"
-				>
-			</File>
 		</Filter>
 	</Files>
 	<Globals>
