@@ -11,6 +11,7 @@
 *.dep
 *.idb
 *.pdb
+*.user
 
 # Build results
 /Debug/
