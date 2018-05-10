@@ -3,6 +3,8 @@ using namespace std;
 
 #include <Address.h>
 #include <inifile.h>
+#include <ProtocolHeader.h>
+#include <execption.h>
 using namespace boring::base;
 using namespace boring::net;
 int main(int argc, char **argv)
@@ -19,6 +21,9 @@ int main(int argc, char **argv)
 		printf("≥ı ºªØ ß∞‹!\n");
 		return NULL;
 	}
+	struct in_addr addr;
+	CAddress::tcp_gethost("www.baidu.com", &addr);
+	CAddress::tcp_gethost("192.168.1.254", &addr);
 
 	cout << "www.baidu.com=" << CAddress::toHost("www.baidu.com") << endl;
 	cout << "127.0.0.1=" << CAddress::toHost("127.0.0.1") << endl;

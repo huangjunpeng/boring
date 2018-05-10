@@ -25,6 +25,7 @@ public:
 	struct sockaddr_in GetSocketAddrIn() const;
 	bool operator==(const CAddress& rAddr);
 	friend std::ostream& operator<<(std::ostream& os, const CAddress& addr);
+public:
 	static int tcp_gethost(const char *addr, struct in_addr *inaddr);
 	static std::string toHost(const char *addr);
 private:

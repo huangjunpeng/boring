@@ -208,6 +208,22 @@
 				>
 			</File>
 			<File
+				RelativePath="..\base\InStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\base\InStream.h"
+				>
+			</File>
+			<File
+				RelativePath="..\base\OutStream.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\base\OutStream.h"
+				>
+			</File>
+			<File
 				RelativePath="..\base\stringutil.cpp"
 				>
 			</File>
@@ -233,6 +249,10 @@
 			</File>
 			<File
 				RelativePath="..\net\Address.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ProtocolHeader.h"
 				>
 			</File>
 		</Filter>

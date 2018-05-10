@@ -6,20 +6,20 @@ NAMESPACE_BEGIN
 class CException : public exception
 {
 public:
-    CException(const char *errmsg) : errmsg(nullptr)
+    CException(const char *errmsg) : errmsg(NULL)
     {
         this->errmsg = _strdup(errmsg);
     }
     virtual ~CException()
     {
-        if (errmsg != nullptr)
+        if (errmsg != NULL)
         {
             free(errmsg);
-            errmsg = nullptr;
+            errmsg = NULL;
         }
         cout << "virtual ~CException().." << endl;
     }
-    virtual const char *what() const noexcept
+    virtual const char *what() const
     {
         return errmsg;
     }

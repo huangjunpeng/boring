@@ -10,7 +10,13 @@ public:
 	}
 	~CAddr()
 	{
-		std::cout << "~CAddr " << ::inet_ntoa(m_addr.sin_addr) << ":" << htons(m_addr.sin_port) << std::endl;
+		std::cout << "~CAddr " << toString().c_str() << std::endl;
+	}
+	std::string toString()
+	{
+		char buf[256] = {0};
+		sprintf_s(buf, 255, "%s:%d", inet_ntoa(m_addr.sin_addr), htons(m_addr.sin_port));
+		return buf;
 	}
 private:
 	struct sockaddr_in m_addr;
@@ -86,9 +92,9 @@ bool CAddress::operator==(const CAddress& rAddr)
 
 int CAddress::tcp_gethost(const char *addr, struct in_addr *inaddr)
 {
-	unsigned long iadd = -1;
+	unsigned long iadd = INADDR_NONE;
 	iadd = inet_addr((char*)addr);
-	if (iadd != -1) {
+	if (INADDR_NONE != iadd) {
 		memcpy(inaddr, (const void*)&iadd, sizeof(iadd));
 		return 0;
 	}
@@ -120,6 +126,6 @@ std::string CAddress::toHost(const char *addr)
 
 std::ostream& boring::net::operator<<(std::ostream& os, const CAddress& addr)
 {
-	os << addr.totIp() << ":" << addr.toPort();
+	os << addr.m_SharedPtrAddr->toString().c_str();
 	return os;
 }
