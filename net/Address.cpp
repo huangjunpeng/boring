@@ -58,14 +58,21 @@ CAddress::CAddress(struct sockaddr_in addr)
 	m_SharedPtrAddr = ShardCAddr(new CAddr(addr));
 }
 
-CAddress::CAddress(CAddress& addr)
+CAddress::CAddress(const CAddress& addr)
 {
 	*this = addr;
 }
 
-CAddress& CAddress::operator=(CAddress& addr)
+CAddress& CAddress::operator=(const CAddress& addr)
 {
 	m_SharedPtrAddr = ShardCAddr(new CAddr(addr.m_SharedPtrAddr->m_addr));
+	return *this;
+}
+
+
+CAddress& boring::net::CAddress::operator=(const struct sockaddr_in& addr)
+{
+	m_SharedPtrAddr = ShardCAddr(new CAddr(addr));
 	return *this;
 }
 
@@ -102,6 +109,46 @@ bool CAddress::operator==(const CAddress& rAddr)
 	}
 	return false;
 }
+
+CAddress::operator struct sockaddr_in()
+{
+	return m_SharedPtrAddr->m_addr;
+}
+
+CAddress::operator struct sockaddr_in&()
+{
+	return m_SharedPtrAddr->m_addr;
+}
+
+CAddress::operator struct sockaddr_in*()
+{
+	return &m_SharedPtrAddr->m_addr;
+}
+
+CAddress::operator struct sockaddr*()
+{
+	return (struct sockaddr*)&m_SharedPtrAddr->m_addr;
+};
+
+CAddress::operator struct sockaddr_in() const
+{
+	return m_SharedPtrAddr->m_addr;
+}
+
+CAddress::operator struct sockaddr_in&() const
+{
+	return m_SharedPtrAddr->m_addr;
+}
+
+CAddress::operator struct sockaddr_in*() const
+{
+	return &m_SharedPtrAddr->m_addr;
+}
+
+CAddress::operator struct sockaddr*() const
+{
+	return (struct sockaddr*)&m_SharedPtrAddr->m_addr;
+};
 
 int CAddress::tcp_gethost(const char *addr, struct in_addr *inaddr)
 {

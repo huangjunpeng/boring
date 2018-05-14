@@ -17,14 +17,23 @@ public:
 	CAddress(u_short uport);
 	CAddress(const char *ip, u_short uport);
 	CAddress(struct sockaddr_in addr);
-	CAddress(CAddress& addr);
-	CAddress& operator=(CAddress& addr);
+	CAddress(const CAddress& addr);
+	CAddress& operator=(const CAddress& addr);
+	CAddress& operator=(const struct sockaddr_in& addr);
 	~CAddress();
 	u_short toPort() const;
 	std::string totIp() const;
 	struct sockaddr_in& GetSocketAddrIn();
 	struct sockaddr_in GetSocketAddrIn() const;
 	bool operator==(const CAddress& rAddr);
+	//operator struct sockaddr_in();
+	//operator struct sockaddr_in&();
+	//operator struct sockaddr_in*();
+	//operator struct sockaddr*();
+	operator struct sockaddr_in() const;
+	operator struct sockaddr_in&() const;
+	operator struct sockaddr_in*() const;
+	operator struct sockaddr*() const;
 	friend std::ostream& operator<<(std::ostream& os, const CAddress& addr);
 public:
 	static int tcp_gethost(const char *addr, struct in_addr *inaddr);

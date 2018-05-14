@@ -38,6 +38,9 @@ int main(int argc, char **argv)
 	CAddress a3("127.0.0.1", 8121);
 	CAddress a4 = a2;
 
+	const struct sockaddr_in& myaddr = (struct sockaddr_in&)a1;
+	//myaddr.sin_port = 1;
+
 	if (a1 == a2) {
 		cout << "a1==a2"<<endl;
 	} else
