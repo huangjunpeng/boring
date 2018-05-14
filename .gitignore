@@ -12,6 +12,7 @@
 *.idb
 *.pdb
 *.user
+*.ncb
 *.vcproj.MXSOFT-ALEX.Administrator.user
 
 # Build results

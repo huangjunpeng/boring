@@ -11,11 +11,12 @@ public:
 	}
 	~CAddr()
 	{
+		std::cout << "~CAddr ";
 		dump();
 	}
 	void dump()
 	{
-		std::cout << "~CAddr " << toString().c_str() << std::endl;
+		std::cout << toString().c_str() << std::endl;
 	}
 	std::string toString()
 	{
@@ -26,6 +27,13 @@ public:
 private:
 	struct sockaddr_in m_addr;
 };
+
+CAddress::CAddress()
+{
+	struct sockaddr_in addr = {0};
+	m_SharedPtrAddr = ShardCAddr(new CAddr(addr));
+}
+
 
 CAddress::CAddress(u_short uport)
 {
@@ -76,7 +84,7 @@ std::string CAddress::totIp() const
 	return ::inet_ntoa(m_SharedPtrAddr->m_addr.sin_addr);
 }
 
-struct sockaddr_in CAddress::GetSocketAddrIn()
+struct sockaddr_in &CAddress::GetSocketAddrIn()
 {
 	return m_SharedPtrAddr->m_addr;
 }

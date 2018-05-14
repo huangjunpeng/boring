@@ -28,18 +28,17 @@ int main(int argc, char **argv)
 	if (SOCKET_ERROR == pServer->Bind()) {
 		printf("绑定失败, nRet=%d\n", WSAGetLastError());
 	}
-	CAddress *pAddress = NULL;
+	CAddress pAddress;
 	char buf[1024] = {0};
 	int len = 0;
 	while (1) {
-		pAddress = NULL;
 		memset(buf, 0, 1024);
 		len = 0;
-		if (SOCKET_ERROR == (len = pServer->RecvFrom(&pAddress, buf, 1023))) {
+		if (SOCKET_ERROR == (len = pServer->RecvFrom(pAddress, buf, 1023))) {
 			printf("接收客户端数据失败, nRet=%d\n", WSAGetLastError());
 			continue;
 		}
-		cout << "客户端:" << pAddress << "Say:" << buf << endl;
+		cout << "客户端:" << pAddress << " Say:" << buf << endl;
 		
 		if (SOCKET_ERROR == (len = pServer->SendTo(pAddress, buf, len)))
 		{

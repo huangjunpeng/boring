@@ -31,23 +31,20 @@ int CUdpServer::Bind()
 		);
 }
 
-int CUdpServer::RecvFrom(CAddress **pAddress, char *buff, int len)
+int CUdpServer::RecvFrom(CAddress &pAddress, char *buff, int len)
 {
-	struct sockaddr_in addr;
-	int iLen = sizeof(addr);
-	int nRet = ::recvfrom(m_socket, buff, len, 0, (struct sockaddr*)&addr, &iLen);
+	int iLen = sizeof(struct sockaddr_in);
+	int nRet = ::recvfrom(m_socket, buff, len, 0, (struct sockaddr*)&pAddress.GetSocketAddrIn(), &iLen);
 	if (SOCKET_ERROR == nRet)
 	{
 		return SOCKET_ERROR;
 	}
-	*pAddress = new CAddress(addr);
 	return nRet;
 }
 
-int CUdpServer::SendTo(CAddress *pAddress, char *buff, int len)
+int CUdpServer::SendTo(const CAddress &pAddress, char *buff, int len)
 {
-	struct sockaddr_in addr = pAddress->GetSocketAddrIn();
-	int nRet = ::sendto(m_socket, buff, len, 0, (struct sockaddr*)&addr, sizeof(addr));
+	int nRet = ::sendto(m_socket, buff, len, 0, (struct sockaddr*)&pAddress.GetSocketAddrIn(), sizeof(struct sockaddr_in));
 	if (SOCKET_ERROR == nRet)
 	{
 		return SOCKET_ERROR;

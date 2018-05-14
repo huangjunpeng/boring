@@ -13,8 +13,8 @@ public:
 public:
 	void SetAddress(CAddress *pAddress) { m_pAddress = pAddress;}
 	int Bind();
-	int RecvFrom(CAddress **pAddress, char *buff, int len);
-	int SendTo(CAddress *pAddress, char *buff, int len);
+	int RecvFrom(CAddress &pAddress, char *buff, int len);
+	int SendTo(const CAddress &pAddress, char *buff, int len);
 
 	SOCKET GetSocket() { return m_socket; }
 

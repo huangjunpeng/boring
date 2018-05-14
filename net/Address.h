@@ -13,6 +13,7 @@ typedef SharedPtr<CAddr> ShardCAddr;
 class CAddress
 {
 public:
+	CAddress();
 	CAddress(u_short uport);
 	CAddress(const char *ip, u_short uport);
 	CAddress(struct sockaddr_in addr);
@@ -21,7 +22,7 @@ public:
 	~CAddress();
 	u_short toPort() const;
 	std::string totIp() const;
-	struct sockaddr_in GetSocketAddrIn();
+	struct sockaddr_in& GetSocketAddrIn();
 	struct sockaddr_in GetSocketAddrIn() const;
 	bool operator==(const CAddress& rAddr);
 	friend std::ostream& operator<<(std::ostream& os, const CAddress& addr);
