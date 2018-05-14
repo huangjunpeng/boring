@@ -26,10 +26,10 @@ public:
 	struct sockaddr_in& GetSocketAddrIn();
 	struct sockaddr_in GetSocketAddrIn() const;
 	bool operator==(const CAddress& rAddr);
-	//operator struct sockaddr_in();
-	//operator struct sockaddr_in&();
-	//operator struct sockaddr_in*();
-	//operator struct sockaddr*();
+	operator struct sockaddr_in();
+	operator struct sockaddr_in&();
+	operator struct sockaddr_in*();
+	operator struct sockaddr*();
 	operator struct sockaddr_in() const;
 	operator struct sockaddr_in&() const;
 	operator struct sockaddr_in*() const;
