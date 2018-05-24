@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="boring"
-	ProjectGUID="{273A8895-FA0A-45A1-8A53-6C1947A7960E}"
-	RootNamespace="boring"
+	Name="libsouth_interface_test"
+	ProjectGUID="{FAAFF8D8-3BD9-40D4-943D-BE884836B8F1}"
+	RootNamespace="libsouth_interface_test"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -20,7 +20,7 @@
 			Name="Debug|Win32"
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="4"
+			ConfigurationType="1"
 			CharacterSet="1"
 			>
 			<Tool
@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../base;../net"
+				AdditionalIncludeDirectories="../include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -60,11 +60,19 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLibrarianTool"
-				OutputFile="..\lib\$(ProjectName).lib"
+				Name="VCLinkerTool"
+				AdditionalDependencies="UploadStatusEx_d.lib"
+				LinkIncremental="2"
+				AdditionalLibraryDirectories="../lib"
+				GenerateDebugInformation="true"
+				SubSystem="1"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -76,6 +84,9 @@
 				Name="VCFxCopTool"
 			/>
 			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -84,7 +95,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="2"
 			WholeProgramOptimization="1"
 			>
 			<Tool
@@ -104,8 +115,9 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="2"
+				Optimization="0"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="../libsouth_interface"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -124,7 +136,9 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="libsouth_interface.lib"
 				LinkIncremental="1"
+				AdditionalLibraryDirectories="../lib"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
@@ -162,6 +176,10 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
+			<File
+				RelativePath=".\main.cpp"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="Í·ÎÄ¼þ"
@@ -174,82 +192,6 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
-		</Filter>
-		<Filter
-			Name="base"
-			>
-			<File
-				RelativePath="..\base\boring.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\execption.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\inifile.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\inifile.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\InStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\InStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\OutStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\OutStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\stringutil.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\stringutil.h"
-				>
-			</File>
-			<File
-				RelativePath="..\base\util.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\base\util.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="net"
-			>
-			<File
-				RelativePath="..\net\Address.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\net\Address.h"
-				>
-			</File>
-			<File
-				RelativePath="..\net\ProtocolHeader.h"
-				>
-			</File>
-			<File
-				RelativePath="..\net\Socket.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\net\Socket.h"
-				>
-			</File>
 		</Filter>
 	</Files>
 	<Globals>

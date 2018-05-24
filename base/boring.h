@@ -53,10 +53,18 @@ typedef uint16 u_short;
 	c = NULL;   \
 }
 
-#define NAMESPACE_BEGIN namespace boring { namespace base {
-#define NAMESPACE_END }}
+#define NAMESPACE_BEGIN namespace boring \
+	{ \
+	namespace base \
+	{
+#define NAMESPACE_END }\
+	}
 
-#define NAMESPACE_NET_BEGIN namespace boring { namespace net {
-#define NAMESPACE_NET_END }}
+#define NAMESPACE_NET_BEGIN namespace boring \
+{ \
+	namespace net\
+{
+#define NAMESPACE_NET_END }\
+}
 
 #endif //__TCP_H_
