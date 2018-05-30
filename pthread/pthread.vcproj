@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="IOCPServer"
-	ProjectGUID="{76FB53B5-D3A4-4367-9693-558558D99003}"
-	RootNamespace="IOCPServer"
+	Name="pthread"
+	ProjectGUID="{BD2FF130-A7D0-491E-988E-7C28303C17AB}"
+	RootNamespace="pthread"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -41,14 +41,14 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../base;../net"
+				AdditionalIncludeDirectories="../Inc"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				DebugInformationFormat="3"
+				DebugInformationFormat="4"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="boring.lib"
+				AdditionalDependencies="libmysql.lib"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="../lib"
 				GenerateDebugInformation="true"
@@ -166,31 +166,6 @@
 		</Configuration>
 	</Configurations>
 	<References>
-		<AssemblyReference
-			RelativePath="System.dll"
-			AssemblyName="System, Version=2.0.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-			MinFrameworkVersion="131072"
-		/>
-		<AssemblyReference
-			RelativePath="System.Data.dll"
-			AssemblyName="System.Data, Version=2.0.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86"
-			MinFrameworkVersion="131072"
-		/>
-		<AssemblyReference
-			RelativePath="System.Drawing.dll"
-			AssemblyName="System.Drawing, Version=2.0.0.0, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
-			MinFrameworkVersion="131072"
-		/>
-		<AssemblyReference
-			RelativePath="System.Windows.Forms.dll"
-			AssemblyName="System.Windows.Forms, Version=2.0.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-			MinFrameworkVersion="131072"
-		/>
-		<AssemblyReference
-			RelativePath="System.XML.dll"
-			AssemblyName="System.Xml, Version=2.0.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-			MinFrameworkVersion="131072"
-		/>
 	</References>
 	<Files>
 		<Filter
@@ -199,42 +174,8 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\IocpModel.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\IocpServer.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\main.cpp"
 				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						MinimalRebuild="false"
-						ExceptionHandling="2"
-						BasicRuntimeChecks="0"
-						UsePrecompiledHeader="0"
-						DebugInformationFormat="3"
-						CompileAsManaged="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						MinimalRebuild="false"
-						ExceptionHandling="2"
-						BasicRuntimeChecks="0"
-						UsePrecompiledHeader="0"
-						DebugInformationFormat="3"
-						CompileAsManaged="1"
-					/>
-				</FileConfiguration>
 			</File>
 		</Filter>
 		<Filter
@@ -247,11 +188,7 @@
 				>
 			</File>
 			<File
-				RelativePath=".\IocpModel.h"
-				>
-			</File>
-			<File
-				RelativePath=".\IocpServer.h"
+				RelativePath=".\lock.h"
 				>
 			</File>
 		</Filter>

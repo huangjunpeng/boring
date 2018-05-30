@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsouth_interface", "libso
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsouth_interface_test", "libsouth_interface_test\libsouth_interface_test.vcproj", "{FAAFF8D8-3BD9-40D4-943D-BE884836B8F1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pthread", "pthread\pthread.vcproj", "{BD2FF130-A7D0-491E-988E-7C28303C17AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -43,6 +45,10 @@ Global
 		{FAAFF8D8-3BD9-40D4-943D-BE884836B8F1}.Debug|Win32.Build.0 = Debug|Win32
 		{FAAFF8D8-3BD9-40D4-943D-BE884836B8F1}.Release|Win32.ActiveCfg = Release|Win32
 		{FAAFF8D8-3BD9-40D4-943D-BE884836B8F1}.Release|Win32.Build.0 = Release|Win32
+		{BD2FF130-A7D0-491E-988E-7C28303C17AB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BD2FF130-A7D0-491E-988E-7C28303C17AB}.Debug|Win32.Build.0 = Debug|Win32
+		{BD2FF130-A7D0-491E-988E-7C28303C17AB}.Release|Win32.ActiveCfg = Release|Win32
+		{BD2FF130-A7D0-491E-988E-7C28303C17AB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
