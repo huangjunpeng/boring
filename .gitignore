@@ -15,9 +15,13 @@
 *.ncb
 *.vcproj.MXSOFT-ALEX.Administrator.user
 
+
 # Build results
 /Debug/
 /boring/Debug/
 /UdpClient/Debug/
 /UdpServer/Debug/
 /boring/boring.vcproj.MXSOFT-ALEX.Administrator.user
+/Release/
+*/Debug/
+*/Release/
