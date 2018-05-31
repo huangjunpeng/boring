@@ -170,6 +170,30 @@ protected:
 
 	// 静态 线程函数，为IOCP请求服务的工作者线程
 	static DWORD WINAPI _WorkerThread(LPVOID lpParam);
+
+	// 获取扩展函数
+	void *_GetExtenSionFun(SOCKET s, const GUID *which_fn);
+
+	// 投递Accept请求
+	bool _PostAccept(PER_IO_CONTEXT* pAcceptIoContext); 
+
+	// 投递接收数据请求
+	bool _PostRecv(PER_IO_CONTEXT* pIoContext);
+
+	//投递发送请求
+	bool _PostSend(PER_IO_CONTEXT* pIoContext);
+
+	// 在有客户端连入的时候，进行处理
+	bool _DoAccpet(PER_SOCKET_CONTEXT* pSocketContext, PER_IO_CONTEXT* pIoContext);
+
+	// 在有接收的数据到达的时候，进行处理
+	bool _DoRecv(PER_SOCKET_CONTEXT* pSocketContext, PER_IO_CONTEXT* pIoContext);
+
+	//在发送数据后进行检测
+	bool _DoSend(PER_SOCKET_CONTEXT* pSocketContext, PER_IO_CONTEXT* pIoContext);
+
+	// 将句柄绑定到完成端口中
+	bool _AssociateWithIOCP( PER_SOCKET_CONTEXT *pContext);
 private:
 	HANDLE								m_hShutdownEvent;				// 用来通知线程系统退出的事件，为了能够更好的退出线程
 
