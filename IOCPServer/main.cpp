@@ -56,9 +56,86 @@ void Handler(int event)
 }
 #endif
 
+template<class CallbackObj>
+class CCallbackProxy
+{
+	typedef void(CallbackObj::*Call)(std::string* str);
+public:
+	void Set(CallbackObj *pObj, Call pCall);
+	bool Exec(std::string *str);
+private:
+	CallbackObj *m_pObj;
+	Call		 m_pCall;
+};
+
+template<class CallbackObj>
+inline void CCallbackProxy<CallbackObj>::Set(CallbackObj *pObj, Call pCall)
+{
+	if (NULL == pObj || NULL == pCall)
+	{
+		throw std::string("传入参数不能为空");
+	}
+	m_pCall = pCall;
+	m_pObj	= pObj;
+}
+template<class CallbackObj>
+inline bool CCallbackProxy<CallbackObj>::Exec(std::string *str)
+{
+	if (NULL == m_pObj || NULL == m_pCall)
+	{
+		return false;
+	}
+	(m_pObj->*m_pCall)(str);
+	return true;
+}
+
+
+class Callback
+{
+public:
+	Callback(std::string str) : m_str(str)
+	{	
+	}
+
+	virtual void Printf(std::string* str)
+	{
+		cout << m_str.c_str() << endl;
+	}
+
+private:
+	std::string m_str;
+};
+
+class Callback_Test : public Callback
+{
+public:
+	Callback_Test(std::string str) : Callback(str)
+	{
+
+	}
+	void Printf(std::string* str)
+	{
+		cout << str->c_str() << endl;
+	}
+};
+
+typedef void (Callback::*callbcak)(std::string& str);
+typedef void (Callback::*LPTELCONN)(std::string* str);
 
 int main(int argc, char **argv)
 {
+	CCallbackProxy<Callback_Test> cProxy;
+	
+
+	Callback_Test bc("213");
+
+	cProxy.Set(&bc, &Callback::Printf);
+
+	std::string str = "123456789";
+	cProxy.Exec(&str);
+	
+
+
 #ifdef WIN32
 	if(!SetConsoleCtrlHandler(Handler, TRUE))
 	{

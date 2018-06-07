@@ -199,6 +199,10 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\Iocp.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\IocpModel.cpp"
 				>
 			</File>
@@ -244,6 +248,10 @@
 			>
 			<File
 				RelativePath=".\config_win32.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Iocp.h"
 				>
 			</File>
 			<File
