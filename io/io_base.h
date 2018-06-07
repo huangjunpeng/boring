@@ -48,7 +48,7 @@ typedef io_uint64					io_size_t;
 typedef io_uint32					io_size_t;
 #endif
 
-#define _free(c) if (NULL != c)	{ free((void*)c); c = NULL;	}
+#define _free(c) if (NULL != c)	{ free((void*)c); c = NULL;}
 
 #define _delete(c)	if (NULL != c){	delete c;c = NULL;}
 
