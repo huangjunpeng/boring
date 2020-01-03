@@ -376,6 +376,7 @@ bool CIocpModel::_PostAccept(PER_IO_CONTEXT* pAcceptIoContext)
 	{
 		return false;
 	}
+	pAcceptIoContext->m_wsaBuf.len = ((sizeof(SOCKADDR_IN) + 16) * 2) + 1;
 
 	if (false == m_lpfnAcceptEx(
 								m_pListenContext->m_Socket,
