@@ -256,7 +256,14 @@ protected:
 };
 
 
-
+template<class _T1, class _Obj>
+struct FUN
+{
+	operator()(_T1 a, _Obj o)
+	{
+		o->*(a)();
+	}
+};
 
 
 

@@ -5,7 +5,7 @@ using namespace std;
 #include <inifile.h>
 #include <ProtocolHeader.h>
 #include <execption.h>
-#include "UdpServer.h"
+#include "TcpServer.h"
 using namespace boring::base;
 using namespace boring::net;
 
@@ -24,26 +24,28 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
-	CUdpServer *pServer = new CUdpServer(new CAddress(5213));
+	CTcpServer *pServer = new CTcpServer(new CAddress(12345));
 	if (SOCKET_ERROR == pServer->Bind()) {
 		printf("绑定失败, nRet=%d\n", WSAGetLastError());
+		return 0;
 	}
-	CAddress pAddress;
+
+	if (SOCKET_ERROR == pServer->Listen(20)) {
+		printf("监听失败, nRet=%d\n", WSAGetLastError());
+		return 0;
+	}
+
 	char buf[1024] = {0};
 	int len = 0;
 	while (1) {
+		SOCKET sock = pServer->Accept();
 		memset(buf, 0, 1024);
 		len = 0;
-		if (SOCKET_ERROR == (len = pServer->RecvFrom(pAddress, buf, 1023))) {
+		if (SOCKET_ERROR == (len = pServer->Recv(sock, buf, 1023))) {
 			printf("接收客户端数据失败, nRet=%d\n", WSAGetLastError());
 			continue;
 		}
-		cout << "客户端:" << pAddress << " Say:" << buf << endl;
-		
-		if (SOCKET_ERROR == (len = pServer->SendTo(pAddress, buf, len)))
-		{
-			return SOCKET_ERROR;
-		}
+		cout << "客户端: " << sock << " Say:" << buf << endl;
 	}
 	return 0;
 }

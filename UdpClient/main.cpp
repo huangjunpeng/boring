@@ -47,38 +47,32 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
-	SOCKET socket = ::socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+	SOCKET socket = ::socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
 	struct sockaddr_in addr;
 	addr.sin_family = AF_INET;
-	addr.sin_port = htons(5213);
+	addr.sin_port = htons(12345);
 	addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
-	char buff[1024] = {0};
-	cin >> buff;		
-	int nRet = ::sendto(socket, buff, strlen(buff), 0, (struct sockaddr*)&addr, sizeof(addr));
+	int nRet = connect(socket, (sockaddr*)&addr, sizeof(struct sockaddr_in));
 	if (SOCKET_ERROR == nRet)
 	{
+		cout << "connect failed nret = " << nRet << std::endl;
 		return SOCKET_ERROR;
 	}
 
-	CServer *pServer = new CServer;
-	pServer->addr = addr;
-	pServer->m_socket = socket;
 
-	::CreateThread(NULL, NULL, ThreadPro, (void*)pServer, THREAD_PRIORITY_NORMAL, NULL);
 
-	char buf[1024] = {0};
-	int iLen = 0;
+	char buff[1024] = {0};
 	while (1) {
-		memset(buf, 0, 1024);
-		iLen = sizeof(addr);
-		nRet = ::recvfrom(socket, buf, 1023, 0, (struct sockaddr*)&addr, &iLen);
+		memset(buff, 0, 1024);
+		cin >> buff;	
+		int nRet = ::send(socket, buff, strlen(buff), 0);
 		if (SOCKET_ERROR == nRet)
 		{
+			cout << "send failed nret = " << nRet << std::endl;
 			return SOCKET_ERROR;
 		}
-		cout << "·þÎñÆ÷:127.0.0.1:5213 Say:" << buf << endl;
 	}
 	return 0;
 }

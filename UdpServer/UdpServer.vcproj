@@ -196,6 +196,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\TcpServer.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\UdpServer.cpp"
 				>
 			</File>
@@ -209,6 +213,10 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\TcpServer.h"
+				>
+			</File>
 			<File
 				RelativePath=".\UdpServer.h"
 				>
